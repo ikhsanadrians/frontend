@@ -6,7 +6,11 @@ const router  = useRouter()
 const store = useUserStore()
 const logout = () => {
     alert('sukses logout')
+    
     store.isLoggedIn = false
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+
     router.push('/auth/login')
 }
 </script>
